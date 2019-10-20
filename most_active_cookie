@@ -1,0 +1,18 @@
+#!/bin/bash
+
+filePath=$1
+echo $var
+shift
+usage="invalid"
+while getopts ":d:a:" opt
+   do
+     case $opt in
+        d ) date=$OPTARG;;
+        * ) echo "gggggg";;
+
+     esac
+done
+
+python sample/core.py $filePath $date
+
+echo "tessss" $filePath $date
