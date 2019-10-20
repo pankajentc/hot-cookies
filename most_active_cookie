@@ -1,18 +1,31 @@
 #!/bin/bash
 
 filePath=$1
-echo $var
+
+usage()
+{
+  echo "Usage: $0 [ file path ] [ -d date ] "
+}
+
 shift
-usage="invalid"
-while getopts ":d:a:" opt
+
+while getopts ":d:" opt
    do
      case $opt in
-        d ) date=$OPTARG;;
-        * ) echo "gggggg";;
-
+        d) date=$OPTARG;;
+        *) usage;;
      esac
 done
 
-python sample/core.py $filePath $date
+if [ -z "$filePath" ] ; then
+   echo 'Please supply input cookie csv file name'
+   usage  
+   exit 1
+fi
 
-echo "tessss" $filePath $date
+if [ -z "$date" ] ; then
+   echo 'Please supply search date i.e -d yyyy-mm-dd'
+   usage 
+   exit 1 
+fi
+python cookie/hot_cookie.py $filePath $date

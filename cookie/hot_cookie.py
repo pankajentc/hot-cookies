@@ -9,14 +9,10 @@ def get_hot_cookie(f_name, date):
     return df[df.Size == df.Size.max()].cookie.to_string(index=False).strip()
 
 
-def e_print(*args, **kwargs):
-    print(*args, file=sys.stderr, **kwargs)
-
-
 if __name__ == "__main__":
 
     file_name = sys.argv[1]
     date = sys.argv[2]
-    e_print("Processing start...",file_name,date)
-    print(get_hot_cookie(file_name, date))
+    print("Processing start...input file :", file_name, " date :", date)
+    print("hot cookies : ", get_hot_cookie(file_name, date))
 

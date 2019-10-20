@@ -1,4 +1,4 @@
 init:
 	pip install -r requirements.txt
 test:
-	nosetests tests/
+	nosetests -verbosity=2 tests/
