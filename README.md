@@ -1,5 +1,4 @@
 # hot-cookies
-# hot-cookies
 
 1)Please install Python version 3.5 and pip
 
