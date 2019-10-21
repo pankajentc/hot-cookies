@@ -28,4 +28,4 @@ if [ -z "$date" ] ; then
    usage 
    exit 1 
 fi
-python cookie/hot_cookie.py $filePath $date
+python3.6 cookie/hot_cookie.py $filePath $date
